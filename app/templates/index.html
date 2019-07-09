@@ -85,6 +85,52 @@
 	</div>
 	<script>
 	  // your solution here
+//    rotate
+    var rotateBox = document.getElementById('rotate-box');
+    var timeToRotate = new Hammer.Manager(rotateBox);
+    var rotate = new Hammer.Rotate();
+    timeToRotate.add([rotate]);
+    timeToRotate.get('rotate').set({enable:true});
+ 
+    timeToRotate.on("rotate", function() {
+      $("#rotate-box").hide("slow");
+      rotateBox.textContent = "rotate worked";});
+    
+    var pinch = document.getElementById('pinch-box');
+    var pinchHammer = new Hammer(pinch);
+    pinchHammer.get('pinch').set({enable: true});
+    pinchHammer.on('pinch', function(){
+      $("#pinch-box").hide("slow");
+      pinch.textContent = "pinch worked";
+    });
+    
+    var press = document.getElementById('press-box');
+    var pressHammer = new Hammer(press);
+    pressHammer.on('press', function(){
+    $("#press-box").hide("slow");
+    press.textContent = "press worked";
+    });
+    
+    var pan = document.getElementById('pan-box');
+    var panHammer = new Hammer(pan);
+    panHammer.on('pan', function(){
+    $("#pan-box").hide("slow");
+    pan.textContent = "pan worked";
+    });
+    
+    var tap = document.getElementById('tap-box');
+    var tapHammer = new Hammer(tap);
+    tapHammer.on('tap', function(){
+    $("#tap-box").hide("slow");
+    tap.textContent = "tap worked";
+    });
+    
+    var swipe = document.getElementById('swipe-box');
+    var swipeHammer = new Hammer(swipe);
+    swipeHammer.on('swipe', function(){
+    $("#swipe-box").hide("slow");
+    swipe.textContent = "swipe worked";
+    });
   </script>
 </body>
 </html>
